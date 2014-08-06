@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title  %}{{ block.super }}Home Page {% endblock title  %}
+    {% get_language_info_list for LANGUAGES as languages %}
+    {% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+    <p>Hello {{ test }}</p>
+    {% trans "New value is" %}
+    {{ request.LANGUAGE_CODE }} {{ LANGUAGE_CODE }}
+{% endblock content %}
